@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PortfolioAPI.Entities;
+using PortfolioAPI.Repositories;
 
 namespace PortfolioAPI.Controllers
 {
@@ -8,9 +10,19 @@ namespace PortfolioAPI.Controllers
     public class ExperienceController : ControllerBase
     {
         [HttpGet]
-        public ActionResult Get()
+        public IActionResult Get()
         {
-            return Ok("Hola mundo");
+            ExperienceRepository experienceRepository = new ExperienceRepository();
+            List<Experience> experiences = experienceRepository.Experiences;
+            return Ok(experiences);
+        }
+
+        [HttpGet("{titleForSearch}")]
+        public IActionResult Get(string titleForSearch)
+        {
+            ExperienceRepository experienceRepository = new ExperienceRepository();
+            List<Experience> experiences = experienceRepository.Experiences;
+            return Ok(experiences.Where(e => e.Title.Contains(titleForSearch)));
         }
     }
 }

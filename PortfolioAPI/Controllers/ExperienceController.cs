@@ -24,5 +24,14 @@ namespace PortfolioAPI.Controllers
             List<Experience> experiences = experienceRepository.Experiences;
             return Ok(experiences.Where(e => e.Title.Contains(titleForSearch)));
         }
+
+        [HttpPost]
+        public IActionResult AddExperience([FromBody]Experience experience)
+        {
+            ExperienceRepository experienceRepository = new ExperienceRepository();
+            List<Experience> experiences = experienceRepository.Experiences;
+            experiences.Add(experience);
+            return Ok(experiences);
+        }
     }
 }

@@ -2,13 +2,9 @@
 
 namespace PortfolioAPI.Repositories
 {
-    public class ExperienceRepository
+    public static class ExperienceRepository
     {
-        public List<Experience> Experiences { get; set; } 
-
-        public ExperienceRepository()
-        {
-            Experiences = new List<Experience>()
+        public static List<Experience> Experiences { get; set; } = new List<Experience>()
             {
                 new Experience()
                 {
@@ -16,7 +12,7 @@ namespace PortfolioAPI.Repositories
                     Description ="zaraza",
                     ImagePath = "zaraza",
                     Summary = "zaraza"
-                    
+
                 },
                 new Experience()
                 {
@@ -30,7 +26,7 @@ namespace PortfolioAPI.Repositories
                 {
                     Title = "Programador backend C sharp"
                 }
-            };
-        }
+
+        };
     }
 }

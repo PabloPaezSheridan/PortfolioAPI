@@ -2,7 +2,7 @@
 
 namespace PortfolioAPI.Models
 {
-    public class ExperienceForCreationRequest
+    public class ExperienceForCreationAndUpdateRequest
     {
         [Required]
         public string Title { get; set; }

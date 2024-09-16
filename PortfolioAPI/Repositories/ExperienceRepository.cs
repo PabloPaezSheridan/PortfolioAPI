@@ -2,9 +2,13 @@
 
 namespace PortfolioAPI.Repositories
 {
-    public static class ExperienceRepository
+    public class ExperienceRepository
     {
-        public static List<Experience> Experiences { get; set; } = new List<Experience>()
+        public ExperienceRepository() 
+        {
+            Console.WriteLine("Me instancie");
+        }
+        public  List<Experience> Experiences { get; set; } = new List<Experience>()
             {
                 new Experience()
                 {

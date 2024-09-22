@@ -10,7 +10,6 @@ namespace PortfolioAPI.Models
         [MaxLength(100)]
         public string Description { get; set; }
         [Required]
-        [Url]
         public string ImagePath { get; set; }
     }
 }

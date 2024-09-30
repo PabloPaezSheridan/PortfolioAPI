@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PortfolioAPI.Entities;
+using PortfolioAPI.Data.Entities;
 
 namespace PortfolioAPI.Data
 {

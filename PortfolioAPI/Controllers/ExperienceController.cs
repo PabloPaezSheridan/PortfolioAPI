@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PortfolioAPI.Data.Entities;
 using PortfolioAPI.Data.Repositories;
-using PortfolioAPI.Entities;
 using PortfolioAPI.Models;
 
 namespace PortfolioAPI.Controllers
@@ -26,11 +26,11 @@ namespace PortfolioAPI.Controllers
 
         }
 
-        //[HttpGet("{titleForSearch}")]
-        //public IActionResult Get(string titleForSearch)
-        //{
-        //    return Ok(_experienceRepository.Experiences.Where(e => e.Title.Contains(titleForSearch)));
-        //}
+        [HttpGet("{titleForSearch}")]
+        public IActionResult Get(string titleForSearch)
+        {
+            return Ok(_experienceRepository.Get(titleForSearch));
+        }
 
         [HttpPost]
         public IActionResult AddExperience([FromBody] ExperienceForCreationAndUpdateRequest requestdto)
@@ -39,7 +39,7 @@ namespace PortfolioAPI.Controllers
             {
                 Description = requestdto.Description,
                 Title = requestdto.Title,
-                ImagePath = requestdto.ImagePath,
+                ImgPath = requestdto.ImagePath,
                 Summary = "En proceso"
             };
 

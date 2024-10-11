@@ -15,6 +15,7 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite(
 builder.Configuration["ConnectionStrings:DBConnectionString"]));
 
 builder.Services.AddTransient<ExperienceRepository>();
+builder.Services.AddTransient<UserRepository>();
 
 var app = builder.Build();
 

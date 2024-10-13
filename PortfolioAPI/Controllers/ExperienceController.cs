@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioAPI.Data.Entities;
 using PortfolioAPI.Data.Repositories;
@@ -32,6 +33,7 @@ namespace PortfolioAPI.Controllers
             return Ok(_experienceRepository.Get(titleForSearch));
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult AddExperience([FromBody] ExperienceForCreationAndUpdateRequest requestdto)
         {

@@ -11,8 +11,8 @@ using PortfolioAPI.Data;
 namespace PortfolioAPI.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20251020004434_InitialMigrationWithSQLServer")]
-    partial class InitialMigrationWithSQLServer
+    [Migration("20251020033834_AddDefaultUserForInitialLogin")]
+    partial class AddDefaultUserForInitialLogin
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,6 +76,14 @@ namespace PortfolioAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Password = "password",
+                            Username = "admin"
+                        });
                 });
 #pragma warning restore 612, 618
         }

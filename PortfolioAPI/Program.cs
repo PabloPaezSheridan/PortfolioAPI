@@ -50,7 +50,7 @@ builder.Services.AddAuthentication("Bearer") //"Bearer" es el tipo de auntentica
     }
 );
 
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite(
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(
 builder.Configuration["ConnectionStrings:DBConnectionString"]));
 
 builder.Services.AddTransient<ExperienceRepository>();

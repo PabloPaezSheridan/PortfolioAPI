@@ -68,7 +68,7 @@ jobs:
         run: dotnet tool install --global dotnet-ef --version 8.*
           
       - name: Update database with EF Core migrations
-        run: dotnet ef database update --project PortfolioAPI/PortfolioAPI.csproj --startup-project PortfolioAPI/PortfolioAPI.csproj
+        run: dotnet ef database update --project PortfolioAPI.csproj --startup-project PortfolioAPI.csproj
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp

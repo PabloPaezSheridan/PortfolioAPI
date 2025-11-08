@@ -71,6 +71,8 @@ jobs:
           
       - name: Update database with EF Core migrations
         run: dotnet ef database update --project PortfolioAPI/PortfolioAPI.csproj --startup-project PortfolioAPI/PortfolioAPI.csproj
+        env:
+          ASPNETCORE_ENVIRONMENT: Production
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
